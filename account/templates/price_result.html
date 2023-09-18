@@ -1,0 +1,40 @@
+{% extends 'navbar.html'%}
+{% block content %}
+{% load static %}
+
+
+<section id="about" class="about">
+<div class="container" data-aos="fade-up">
+
+
+
+  <div class="col-lg-6d-flex" class="'content">
+     
+    <h2>price result</h2>
+   
+    <h4>total price:${{total_price}}</h4><br> 
+    <h5>are you ready to continue?</h5>
+    <a href="{% url 'pay'%}" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+      <span>pay</span>
+      <i class="bi bi-arrow-right"></i>
+    </a>
+    <!-- <a href="{% url 'pay'%}">pay</a> -->
+    <div>
+    
+      <!-- <div class="col-lg-6d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+        <img src="{% static 'img/maxresdefault.jpg' %}" class="img-fluid" alt="">
+      </div> -->
+
+      
+      
+</div>
+</section>
+     
+      {% endblock content %}
+    
+  <!-- </body>
+  </html>
+   -->
+    
+      
+    

@@ -1,0 +1,50 @@
+{% extends 'navbar.html'%}
+{% block content %}
+{% load static %}
+
+
+<main id="main">
+  <section id="about" class="about">
+
+    <div class="container" data-aos="fade-up">
+      <div class="row gx-0">
+
+        <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="500">
+          <div class=" content">
+
+            <h1>About Us </h1>
+            <p>Our mission at menter is to create an honest, hasle-free, and quality moving experience for our
+              customers.We specialize in large residential moves as well as local,long distance, and office moves. We
+              offer packing/moving services throughtout everywhere
+            </p>
+            <div class="text-center text-lg-start">
+              <a href="#"
+                class="btn-read-more d-inline-flex align-items-center justify-content-center align-self-center">
+                <span>Read More</span>
+                <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+          <img src="{% static 'img/2019-01-28.jpg' %}" class="img-fluid" alt="">
+        </div>
+
+      </div>
+    </div>
+
+  </section><!-- End About Section -->
+
+
+
+
+
+</main><!-- End #main -->
+
+
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+    class="bi bi-arrow-up-short"></i></a>
+
+<!-- Vendor JS Files -->
+{% endblock content %}

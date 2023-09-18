@@ -1,0 +1,55 @@
+{% extends 'navbar.html'%}
+{% block content %}
+{% load static %}
+
+
+    <section id="about" class="about">
+    <div class="container" data-aos="fade-up">
+    <div class=" content">
+    
+      <form action="" method="POST">
+        {% csrf_token%}
+        <div class="col-md-12">
+        <label for="Weight"><h2>Weight(kg):</h2></label>
+        <input type="number" class="form-control" name="Weight" step="0.01" required><br>
+        <input type="submit" value="calculate price">
+        </div>
+      </form>
+    </div>
+    </div>
+    </section>
+
+
+
+
+      <!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form action="{% url 'calculate_price' %} " method="post">
+                {% csrf_token%}
+                <label for="Weight">Weight</label>
+                <input type="number" name="Weight"  step="0.01" class="form-control" id=""><br>
+                <button class="btn btn-success">Sumbit</button>
+
+              </form>
+              
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel
+              </button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      -->
+      {% endblock content %}
+    
+ 

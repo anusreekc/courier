@@ -1,0 +1,90 @@
+{% extends 'navbar.html'%}
+{% block content %}
+{% load static %}
+
+ 
+           
+                
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+
+      <div class="container" data-aos="fade-up">
+
+        <header class="section-header">
+          <!-- <h2>Contact</h2> -->
+          <p>shipping data</p>
+        </header>
+
+        <div class="row gy-4">
+
+
+
+          <div class="col-lg-6">
+              <form action=""  method="post"  class="php-email-form">
+                {%csrf_token%}
+                <div class="row gy-4">
+
+                  <!-- <p>shipment data</p> -->
+
+                  
+                  <div class="col-md-12">
+
+                    <label for="goods"> Goodscategory</label>
+
+                        <select name="goods" id="">
+                          <option value="Electronics">Electronics</option>
+                          <option value="Fasion">Fasion</option>
+                          <option value="Accessories">Accessories</option>
+                          <option value="Books">Books</option>
+                          <option value="Home Appliances">Home Appliances</option>
+                          
+                        </select>
+
+                    <!-- <input type="" name="name" class="form-control" placeholder="Goods catagory" required> -->
+                  </div><br>
+                  <div class="col-md-12">
+                    <input type="number" class="form-control" name="price" placeholder="shipment value" required>
+                  </div>
+
+                 
+                  <div class="col-md-12">
+                    <input type="text" name="city" class="form-control" placeholder="Delivery city" required>
+                  </div><br>
+                  <!-- <div class="col-md-12">
+                    <input type="number" name="wgt" class="form-control" placeholder="weight" required>
+                  </div><br> -->
+                 
+                  
+                  
+
+                  <div class="col-md-12">
+                    <textarea class="form-control" name="addr" rows="6" placeholder="shipping address" required></textarea>
+                  </div>
+
+                  <div class="col-md-12 text-center">
+                    <div class="loading">Loading</div>
+                    <div class="error-message"></div>
+                    <div class="sent-message">Your message has been sent. Thank you!</div>
+
+                    <button type="submit">submit </button>
+                  </div>
+
+                </div>
+              </form>
+
+            </div>
+          </div>
+
+        </div>
+  
+      </section><!-- End Contact Section -->
+  
+    </main><!-- End #main -->
+  
+  
+    
+  
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  
+   {% endblock content %}
+
