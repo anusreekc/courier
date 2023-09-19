@@ -12,21 +12,23 @@
 
         <header class="section-header">
           <!-- <h2>Contact</h2> -->
-          <p>shipping data</p>
+          <!-- <p>shipping data</p> -->
         </header>
 
         <div class="row gy-4">
+          <div class="col-lg-12 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+            <img src="{% static 'img/prueba-maximo.webp' %}" class="img-fluid" alt="">
+            <br>
+          </div>
 
 
 
-          <div class="col-lg-6">
+
+          <div class="col-lg-12">
               <form action=""  method="post"  class="php-email-form">
                 {%csrf_token%}
                 <div class="row gy-4">
-
-                  <!-- <p>shipment data</p> -->
-
-                  
+                  <p><h3>Shipping details</h3></p>
                   <div class="col-md-12">
 
                     <label for="goods"> Goodscategory</label>

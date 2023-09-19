@@ -59,7 +59,7 @@ class ServiceHome(View):
 class PersonaldataView(TemplateView):
     template_name="contact.html"
     def post(self,request,*args,**kwargs):
-        id= kwargs.get("id")
+        # id= kwargs.get("id")
         
         first=request.POST.get("name1")
         last=request.POST.get("name2")
@@ -71,24 +71,20 @@ class PersonaldataView(TemplateView):
         return redirect('ship')
         
    
-    # def get(self,request):
-    #     return render(request,"contact.html")  
+   
     
 class ShipHome(TemplateView):
-    # def get(self,request,*args,**kwargs):
-    #     cid=kwargs.get("id")
-    #     product=Personaldata.objects.get(id=cid)
+   
     template_name="shippingdata.html"
     def post(self,request,*args,**kwargs):
-        # cid=kwargs.get("id")
-        # product=Personaldata.objects.get(id=cid)
+       
     
         goodscaty=request.POST.get("goods")
         shipvalue=request.POST.get("price")
         delcity=request.POST.get("city")
         shipaddr=request.POST.get("addr")
         Shippingdata.objects.create(Goodscategory=goodscaty, delcity=delcity,shippingaddr=shipaddr,shipvalue=shipvalue)
-        # product.save()
+        
         return redirect("calculate_price")
     
 
@@ -114,12 +110,7 @@ class BookingView(ListView):
     context_object_name="book"
 
 class StoreView(ListView):
-    # def get(self,request):
-    #     res=store.objects.all()
-    #     return render(request,"store.html",{"data":res})    
-    
     template_name="store.html"
-    
     queryset=store.objects.all()  
     context_object_name='data' 
 

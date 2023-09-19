@@ -1,6 +1,4 @@
-<!-- {% extends 'navbar.html'%}
-{% block content %}
-{% load static %} -->
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -17,44 +15,30 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body>
-    {% if messages %}
-    {% for i in messages %}
-    {% if i.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
-    <div class="alert alert-success alert-dismissible">
-        <button class="close" data-dismiss="alert">&times;</button>
-        {{i}}
-    </div>
-    {%endif%}
-    {%endfor%}
-      
-    
+/{% if messages %}
+{% for i in messages %}
+{% if i.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+<div class="alert alert-success">
+  {{i}}
+
+</div>
+{% endif%}
+{% if i.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+<div class="alert alert-danger">
+  {{i}}
+
+</div>
+{%endif%}
+{%endfor%}
+{%endif%}
+ 
   </body>
 </html>
 
 
 
-{% if messages %}
-    {% for i in messages %}
-    {% if i.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
-    <div class="alert alert-success alert-dismissible">
-        <button class="close" data-dismiss="alert">&times;</button>
-        {{i}}
-    </div>
-    {%endif%}
-    {%endfor%}
-
-
-    {%endif%}
 
     
+    
 
-    <!-- {%for i in book %}
-
-      <h2>{{i.phone}}</h2>
-      <h2>{{i.Status}}</h2>
-  
-    {%endfor%} -->
-
-<!-- {%endif%} -->
-
-<!-- {%endblock content %} -->
+ 

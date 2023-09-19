@@ -12,8 +12,14 @@
      
     <h2>price result</h2>
    
-    <h4>total price:${{total_price}}</h4><br> 
+    <h4>total price:Rs{{total_price}}</h4><br> 
     <h5>are you ready to continue?</h5>
+    <a href="{% url 'h'%}" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+      <i class="bi bi-arrow-left"></i>
+      <span>cancel</span>
+      
+    </a>&nbsp; &nbsp; &nbsp; &nbsp;
+    
     <a href="{% url 'pay'%}" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
       <span>pay</span>
       <i class="bi bi-arrow-right"></i>
