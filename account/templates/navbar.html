@@ -45,8 +45,8 @@
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
       <a href="cust_home.html" class="logo d-flex align-items-center">
-        <img src="{% static 'img/logo.png' %}" alt="">
-        <span>FlexStart</span>
+       
+        <span style="color: rgb(43, 43, 175);">Courier Service</span>
       </a>
 
       <nav id="navbar" class="navbar">
@@ -54,10 +54,11 @@
           <li><a class="nav-link scrollto active" href="{% url 'h' %}">Home</a></li>
           <li><a class="nav-link scrollto" href="{% url 'about' %}">About</a></li>
           <li><a class="nav-link scrollto" href="{% url 'ser' %}">Services</a></li>
-          <li><a class="nav-link scrollto" href="{% url 'cont' %}">Add Details</a></li>
-          <li><a class="nav-link scrollto" href="{% url 'Store' %}">Near by</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'cont' %}">Personal Details</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'Store' %}">Near By</a></li>
+          
+          <li><a class="nav-link scrollto" href="{% url 'book' %}">Booked Details</a></li>
           <li><a class="nav-link text-danger" href="{% url 'lgout' %}">LOGOUT</a></li>
-          <li><a class="nav-link scrollto" href="{% url 'book' %}">Booking</a></li>
           
           
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -84,29 +85,14 @@
   {% endblock content%}
   <footer id="footer" class="footer">
 
-    <!-- <div class="footer-newsletter">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-12 text-center">
-            <h2>Contact Details</h2>
-            
-          </div>
-          <div class="col-lg-6">
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
-            </form>
-          </div>
-        </div>
-      </div>
-    </div> -->
-
+    
     <div class="footer-top">
       <div class="container">
         <div class="row gy-4">
           <div class="col-lg-5 col-md-12 footer-info">
             <a href="index.html" class="logo d-flex align-items-center">
-              <img src="{% static 'img/logo.png' %}" alt="">
-              <span>FlexStart</span>
+              
+              <span>Courier Service</span>
             </a>
             <p>We safely move your valuable products.</p>
             <div class="social-links mt-3">
@@ -129,25 +115,26 @@
           </div>
 
           <div class="col-lg-2 col-6 footer-links">
-            <h4>Our Services is</h4>
+            <h4>Our Services </h4>
             <ul>
               <li><i class="bi bi-chevron-right"></i> <a href="#">fast</a></li>
               <li><i class="bi bi-chevron-right"></i> <a href="#">reliable</a></li>
               <li><i class="bi bi-chevron-right"></i> <a href="#">cost effective</a></li>
               
             </ul><br>
-            <h6><b>Open Hours</b></h6>
-            <p>Monday - Friday<br>9:00AM - 05:00PM</p>
+
+            <h6 style="color: rgb(33, 33, 109);">Open Hours</h6>
+            <p style="color: rgb(33, 33, 109);">Monday - Friday<br>9:00AM - 05:00PM</p>
           </div>
 
           <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
             <h4>Contact Us</h4>
-            <p>
-              flexstart courier services <br>
+            <p style="color: rgb(33, 33, 109);">
+              Courier services <br>
               kochi<br>
               kerala <br><br>
-              <strong>Phone:</strong> 9876543456<br>
-              <strong>Email:</strong> flexstart@example.com<br>
+              Phone: 9876543456<br>
+              Email: courier@example.com<br>
 
               
             </p>
@@ -158,18 +145,7 @@
       </div>
     </div>
 
-    <div class="container">
-      <div class="copyright">
-        &copy; Copyright <strong><span>FlexStart</span></strong>. All Rights Reserved
-      </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/flexstart-bootstrap-startup-template/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-      </div>
-    </div>
+    
   </footer><!-- End Footer -->
 
 

@@ -10,11 +10,11 @@ urlpatterns=[
     path('about',AboutHome.as_view(),name='about'),
     path('ser',ServiceHome.as_view(),name='ser'),
     path('contact',PersonaldataView.as_view(),name='cont'),
-    path('ship',ShipHome.as_view(),name='ship'),
+    path('ship/<int:id>',ShipHome.as_view(),name='ship'),
     path('storev',StoreView.as_view(),name='Store'),
-    path('pay',PaymentHome.as_view(),name='pay'),
+    path('pay/<int:id>/',PaymentHome.as_view(),name='pay'),
     path("lgout",LgOutView.as_view(),name='lgout'),
-    path('calculate_price/',views.calculate_price,name='calculate_price'),
+    path('calculate_price/<int:id>/',calculate_price,name='calculate_price'),
     path('book',BookingView.as_view(),name='book'),
     
 ]

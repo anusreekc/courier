@@ -59,7 +59,6 @@ class ServiceHome(View):
 class PersonaldataView(TemplateView):
     template_name="contact.html"
     def post(self,request,*args,**kwargs):
-        # id= kwargs.get("id")
         
         first=request.POST.get("name1")
         last=request.POST.get("name2")
@@ -67,8 +66,9 @@ class PersonaldataView(TemplateView):
         phone=request.POST.get("phn")
         msg=request.POST.get("message")
         Personaldata.objects.create(firstname=first,lastname=last,email=email,phn=phone,message=msg)
-        # messages.success(request,"order placed successfully")
-        return redirect('ship')
+        x=Personaldata.objects.latest('id')
+        print(x)
+        return redirect('ship',id=x.id)
         
    
    
@@ -76,29 +76,34 @@ class PersonaldataView(TemplateView):
 class ShipHome(TemplateView):
    
     template_name="shippingdata.html"
-    def post(self,request,*args,**kwargs):
-       
-    
+    def post(self,request,id):
+        
+        p=Personaldata.objects.get(id=id)
+        print(p)
+        user=request.user
         goodscaty=request.POST.get("goods")
-        shipvalue=request.POST.get("price")
+       
         delcity=request.POST.get("city")
         shipaddr=request.POST.get("addr")
-        Shippingdata.objects.create(Goodscategory=goodscaty, delcity=delcity,shippingaddr=shipaddr,shipvalue=shipvalue)
-        
-        return redirect("calculate_price")
+        Shippingdata.objects.create(person=p,user=user,Goodscategory=goodscaty, delcity=delcity,shippingaddr=shipaddr)
+        x=Shippingdata.objects.latest('id')
+
+        return redirect("calculate_price",id=x.id)
     
 
     
-def calculate_price(request):
+def calculate_price(request,id):
     
     if request.method=='POST':
+        p=Shippingdata.objects.get(id=id)
         Weight=float(request.POST['Weight'])
-        CourierGoods.objects.create(Weight=Weight)
+        CourierGoods.objects.create(shiip=p,Weight=Weight)
+        x=CourierGoods.objects.latest('id')
         base_price=0
         price_per_kg=5
         total_price=base_price+(Weight*price_per_kg)
         
-        return render(request,'price_result.html',{'total_price':total_price})
+        return render(request,'price_result.html',{'total_price':total_price,'id': x.id})
     return render(request,'calculate_price.html')
 
 
@@ -125,15 +130,14 @@ class LgOutView(View):
 class PaymentHome(TemplateView):
     template_name="payment.html"
 
-    def post(self,request,*args,**kwargs): 
-       
-        user=request.user
-        phone=request.POST.get("phn")
-        Booking.objects.create(user=user,phone=phone)
-        messages.success(request,"Booking successful ")
-        return redirect("book")
-
-
+  
+    def post(self,request,id):
+        p=CourierGoods.objects.get(id=id)
+        u=request.user
+        Booking.objects.create(detail=p,user=u)
+        
+        messages.success(request,"order placed successfully")
+        return redirect("h")
      
 
 

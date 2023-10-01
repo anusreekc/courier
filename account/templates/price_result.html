@@ -9,7 +9,8 @@
 
 
   <div class="col-lg-6d-flex" class="'content">
-     
+   
+    <br><br>
     <h2>price result</h2>
    
     <h4>total price:Rs{{total_price}}</h4><br> 
@@ -20,11 +21,11 @@
       
     </a>&nbsp; &nbsp; &nbsp; &nbsp;
     
-    <a href="{% url 'pay'%}" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+    <a href="{% url 'pay' id=id %}" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
       <span>pay</span>
       <i class="bi bi-arrow-right"></i>
     </a>
-    <!-- <a href="{% url 'pay'%}">pay</a> -->
+    
     <div>
     
       <!-- <div class="col-lg-6d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">

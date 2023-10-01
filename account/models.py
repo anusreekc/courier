@@ -11,7 +11,7 @@ class Personaldata(models.Model):
     message=models.CharField(max_length=500,null=True)
     
 class Shippingdata(models.Model):
-    product=models.ForeignKey(Personaldata,on_delete=models.CASCADE,null=True) 
+    person=models.ForeignKey(Personaldata,on_delete=models.CASCADE,null=True) 
     user=models.ForeignKey(User,on_delete=models.CASCADE,null=True)
     options=(
         ('Electronics','Electronics'),
@@ -25,7 +25,6 @@ class Shippingdata(models.Model):
     delcity=models.CharField(max_length=100)
     shippingaddr=models.CharField(max_length=100)
     
-    shipvalue=models.IntegerField(null=True)
 
 
 class store(models.Model):
@@ -35,14 +34,16 @@ class store(models.Model):
 
 
 class CourierGoods(models.Model):
-    Weight=models.FloatField(null=True)    
+    shiip=models.ForeignKey(Shippingdata,on_delete=models.CASCADE,null=True) 
+    Weight=models.FloatField(null=True)  
+    # user=models.ForeignKey(User,on_delete=models.CASCADE,null=True)
+  
 
 
 class Booking(models.Model):
-    personaldata=models.ForeignKey(Personaldata,on_delete=models.CASCADE,null=True)
-    shippingdata=models.ForeignKey(Shippingdata,on_delete=models.CASCADE,null=True)
+    detail=models.ForeignKey(CourierGoods,on_delete=models.CASCADE,null=True)
     user=models.ForeignKey(User,on_delete=models.CASCADE,null=True)
-    phone=models.IntegerField()
+    
     options=(
         ('Confirmed','Confirmed'),
         ('Shipped','Shipped'),
